@@ -11,11 +11,11 @@ Info
 Base version: 20200630 sample
 Changes:
 
-    Support remapping of html &pound; and some other html keywords to the printer text encoding.
-    Support remapping any embedded UTF-8 £ characters to CP1252 if that encoding is being used
-    Follow guidelines to attempt support for Sequential Order Numbers plugin
-    Use Website specified date/time formatting
-    Use Website specified timezone, instead of server time.
+*    Support remapping of html &pound; and some other html keywords to the printer text encoding.
+*    Support remapping any embedded UTF-8 £ characters to CP1252 if that encoding is being used
+*    Follow guidelines to attempt support for Sequential Order Numbers plugin
+*    Use Website specified date/time formatting
+*    Use Website specified timezone, instead of server time.
 
 Installation
 
