@@ -1,21 +1,31 @@
 # StarWooCloudPRNT-beta
 Star CloudPRNT for WooCommerce Plugin edit Tim-VL
 
-base: https://vault.star-emea.com/s/WFEiKggj7sS3w39
+base: https://vault.star-emea.com/s/E8yTWJGWLBJck7q
 
 
 Star CloudPRNT for WooCommerce Plugin
-2020/08/26 - Special Release
+2020/09/11 - Special Release
 Info
 
 Base version: 20200630 sample
 Changes:
 
-*    Support remapping of html &pound; and some other html keywords to the printer text encoding.
-*    Support remapping any embedded UTF-8 £ characters to CP1252 if that encoding is being used
-*    Follow guidelines to attempt support for Sequential Order Numbers plugin
-*    Use Website specified date/time formatting
-*    Use Website specified timezone, instead of server time.
+    Support printing order meta-data fields from an embedded list
+
+Modifying the list of printed fields
+
+The fields that will be printed can be edited by modifying the array of key names on line 196 of order-handler.php
+
+It is also possible to modify the line that will be printed, where [value] will be replaced with the data.
+
+Example:
+
+$fields = array(
+    "pi_delivery_date" => "Delivery Date: [value]",
+    "pi_delivery_time" => "Delivery Time: [value]",
+    "pi_delivery_type" => "Delivery Type: [value]"
+);
 
 <b>Installation</b>
 
