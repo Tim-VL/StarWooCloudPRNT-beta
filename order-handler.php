@@ -187,11 +187,30 @@
 		}
 	}
 	
-	function star_cloudprnt_create_receipt_order_meta_data($meta_data, &$printer, $max_chars)
+	function star_cloudprnt_create_receipt_order_meta_data($meta_data, $order, &$printer, $max_chars)
 	{
-		if(get_option('star-cloudprnt-print-order-meta-cb') != on)
+		if(get_option('star-cloudprnt-print-order-meta-cb') != 'on')
 			return;
 		
+		// List of meta data item keys to print and formatted output
+		$fields = array(
+			"pi_delivery_date" => "Delivery Date: [value]",
+			"pi_delivery_time" => "Delivery Time: [value]",
+			"pi_delivery_type" => "Delivery Type: [value]"
+		);
+			
+		foreach (array_keys($fields) as $key)
+		{
+			if($order->meta_exists($key))
+			{
+				$printer->add_text_line(str_replace('[value]', $order->get_meta($key), $fields[$key]));
+			}
+		}
+		
+		$printer->add_text_line("");
+
+		// Code for enumarationg/printing all fields
+		/*
 		$is_printed = false;
 		
 		foreach ($meta_data as $item_id => $meta_data_item)
@@ -205,10 +224,12 @@
 			}
 			
 			$item_data = $meta_data_item->get_data();
+			
 			$printer->add_text_line($item_data["key"].": ".$item_data["value"]);
 		}
 		
 		if($is_printed)	$printer->add_text_line("");
+		*/
 	}
 
 
@@ -282,10 +303,7 @@
 		$printer->set_text_emphasized();
 		$printer->set_text_center_align();
 		$printer->set_font_magnification(2, 2);
-		if (isset($shipping_items['name'])) {
-		$printer->add_new_line(1);
-		$printer->add_text_line("$shipping_items['name']);
-		} else if($selectedPrinter['columns'] < 40) {
+		if($selectedPrinter['columns'] < 40) {
 			$printer->add_text_line("ORDER");
 			$printer->add_text_line("NOTIFICATION");
 		} else {
@@ -328,7 +346,7 @@
 		$printer->add_text_line("All prices are inclusive of tax (if applicable).");
 		$printer->add_new_line(1);
 		
-		star_cloudprnt_create_receipt_order_meta_data($meta_data, $printer, $selectedPrinter['columns']);
+		star_cloudprnt_create_receipt_order_meta_data($meta_data, $order, $printer, $selectedPrinter['columns']);
 		
 		star_cloudprnt_create_address($order, $order_meta, $printer);
 		
