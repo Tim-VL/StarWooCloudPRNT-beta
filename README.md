@@ -20,16 +20,16 @@ The fields that will be printed can be edited by modifying the array of key name
 It is also possible to modify the line that will be printed, where [value] will be replaced with the data.
 
 Example:
-[code]
+```
 $fields = array(
     "pi_delivery_date" => "Delivery Date: [value]",
     "pi_delivery_time" => "Delivery Time: [value]",
     "pi_delivery_type" => "Delivery Type: [value]"
 );
-[/code]
+```
 
 
-<b>Installation</b>
+## Installation
 
 It is recommended to uninstall any existing version of the Star CloudPRNT plugin before installing this sample version.
 Through the WordPress admin interface (recommended)
