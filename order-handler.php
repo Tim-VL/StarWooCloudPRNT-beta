@@ -282,7 +282,10 @@
 		$printer->set_text_emphasized();
 		$printer->set_text_center_align();
 		$printer->set_font_magnification(2, 2);
-		if($selectedPrinter['columns'] < 40) {
+		if (isset($shipping_items['name'])) {
+		$printer->add_new_line(1);
+		$printer->add_text_line("$shipping_items['name']);
+		} else if($selectedPrinter['columns'] < 40) {
 			$printer->add_text_line("ORDER");
 			$printer->add_text_line("NOTIFICATION");
 		} else {
