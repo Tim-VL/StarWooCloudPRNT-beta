@@ -1,5 +1,5 @@
 # StarWooCloudPRNT-beta
-Star CloudPRNT for WooCommerce Plugin edit Tim-VL
+#### This is a modified version by Tim-VL
 
 base: https://vault.star-emea.com/s/E8yTWJGWLBJck7q
 
