@@ -1,5 +1,5 @@
 # StarWooCloudPRNT-beta
-Star CloudPRNT for WooCommerce Plugin
+Star CloudPRNT for WooCommerce Plugin edit Tim-VL
 
 base: https://vault.star-emea.com/s/WFEiKggj7sS3w39
 
@@ -17,7 +17,7 @@ Changes:
 *    Use Website specified date/time formatting
 *    Use Website specified timezone, instead of server time.
 
-Installation
+<b>Installation</b>
 
 It is recommended to uninstall any existing version of the Star CloudPRNT plugin before installing this sample version.
 Through the WordPress admin interface (recommended)
