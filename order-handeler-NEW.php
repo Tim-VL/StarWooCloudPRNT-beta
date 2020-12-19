@@ -1,4 +1,12 @@
 <?php
+
+/*
+*	Star CloudPRNT for WooCommerce Order Handler
+*	Edit version by Tim @ 19 Dec 2020
+*	use for mC2 and mC3 printers
+*	mC printer setting: max width + 180C rotate
+*
+*/
 	function star_cloudprnt_get_column_separated_data($columns, $max_chars)
 	{
 		//$max_chars = STAR_CLOUDPRNT_MAX_CHARACTERS_TWO_INCH;
